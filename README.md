@@ -11,7 +11,7 @@ University of Electronic Science and Technology of China (UESTC)
 
 We study angular super-resolution for millimeter-wave phased array radar in low-altitude remote sensing. Closely spaced scatterers produce overlapping echoes, while the array beam pattern changes with steering angle. These effects make it difficult to separate weak targets using a single shift-invariant point-spread function.
 
-Our method, operator conditioned adaptive randomized reconstruction (OCARR), uses the two-sided model $Y=KXG+N$, with separate operators for the range response and direction-dependent array pattern. The operators shape the random probes used for echo denoising. We then select the truncation rank locally in overlapping blocks to account for strong returns, weak returns, and noise. Sparse reconstruction starts with full-image FISTA and continues within regions of interest identified from the intermediate estimate.
+Our method, operator conditioned adaptive randomized reconstruction (OCARR), uses the two sided model $Y=KXG+N$, with separate operators for the range response and direction-dependent array pattern. The operators shape the random probes used for echo denoising. We then select the truncation rank locally in overlapping blocks to account for strong returns, weak returns, and noise. Sparse reconstruction starts with full-image FISTA and continues within regions of interest identified from the intermediate estimate.
 
 The experiments examine three components: operator conditioned sketching (OCS), block adaptive rank selection (BARS), and adaptive ROI constrained FISTA (ARF). This repository currently contains their result figures and processed MATLAB data; the reconstruction code is not included.
 
@@ -78,8 +78,8 @@ The measured-echo images and all four reconstructions are available in [Field Ex
 
 | Folder | Contents |
 |---|---|
-| [Angle resolution test](Angle%20resolution%20test/) | Results for the two-target angular-resolution tests |
-| [Comparison and ablation study](Comparison%20and%20ablation%20study/) | Simulated noisy echoes, reference-method results, and component ablations |
+| [Angle resolution test](Angle%20resolution%20test/) | Results for the two target angular resolution tests |
+| [Comparison and ablation study](Comparison%20and%20ablation%20study/) | Simulated noisy echoes, reference method results, and component ablations |
 | [Field Experiments](Field%20Experiments/) | Reconstruction data and figures from the two field measurements |
 
 The simulation folders are grouped by SNR: `25dB`, `17.5dB`, and `10dB`. Each has a `Data` directory for `.mat` files and a `Figure` directory for `.png` files. The field folder uses the same two subdirectories, with filenames beginning with `Field1` or `Field2`.
@@ -93,7 +93,7 @@ Filenames retain the labels used during the experiments:
 | `nophy_noblcok_noroi` | TS-RSVD baseline |
 | `phy` / `nophy` | Operator conditioned / isotropic Gaussian sketching |
 | `blcok` / `noblcok` | Block adaptive / global rank selection |
-| `roi` / `noroi` | ROI constrained / full-image FISTA |
+| `roi` / `noroi` | ROI constrained / full image FISTA |
 | `phy_blcok_roi` | OCARR with all three components |
 
 The spelling `blcok` is retained from the original filenames. `Xhat` denotes a reconstruction, `Ynoisy` denotes a noisy echo, and `outline` identifies field figures with reference contours.
