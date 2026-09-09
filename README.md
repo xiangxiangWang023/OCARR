@@ -15,6 +15,8 @@ Our method, operator conditioned adaptive randomized reconstruction (OCARR), use
 
 The experiments examine three components: operator conditioned sketching (OCS), block adaptive rank selection (BARS), and adaptive ROI constrained FISTA (ARF). This repository currently contains their result figures and processed MATLAB data; the reconstruction code is not included.
 
+The code will be made public according to the review process.
+
 ## Simulation results
 
 The simulated scene contains five target pairs on a 256 × 256 range–azimuth grid spanning 0–48 m and −40° to 40°. Target amplitudes vary from 0.4 to 1.0. We compare OCARR with TRD, truncated SVD (TSVD), and two-sided randomized SVD (TS-RSVD) at three signal-to-noise ratios.
